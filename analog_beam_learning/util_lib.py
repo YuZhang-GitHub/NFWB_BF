@@ -1,6 +1,3 @@
-# the loaded data type in MATLAB is struct with 2 fields: channels and userLoc
-# channels.shape: (#ant, #sub, #user), userLoc.shape: (#user, 3)
-# And also note that each element of channels is complex number.
 import numpy as np
 import h5py as h5
 import scipy.io as scio
@@ -51,14 +48,3 @@ def bf_gain_calc(f, h):
     gain = gain_r + gain_i
 
     return gain
-
-
-# --- test script ---
-# path = 'C:/Users/yzhan899/Dropbox (ASU)/Research/Paper_Channel Tracking/codes/DeepMIMO_Dataset_Generation v1.1/CT_O1_3p5_BS3_5Paths_norm.mat'
-# data = dataPrep(path)
-
-if __name__ == '__main__':
-
-    Y = load_ch('./H_1.8_2.2_ULA256.mat')
-
-    pp = 1

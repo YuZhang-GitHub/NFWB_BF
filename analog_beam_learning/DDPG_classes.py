@@ -79,7 +79,6 @@ class Critic(nn.Module):
         u = u_r ** 2 + u_i ** 2
         u_min = torch.mean(u, dim=1).reshape(-1, 1)
 
-        # TODO: Design a function to magnify the error!!! Not necessary linear as the core is the matrix, as long as the same error will lead to the same out
         # out = 10 * torch.log10(u_min) - 10 * torch.log10(z_min)
         # out = torch.log10(u_min) - torch.log10(z_min)
         out = reward_func_v2(u_min) - reward_func_v2(z_min)
